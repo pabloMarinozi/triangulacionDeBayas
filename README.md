@@ -53,6 +53,13 @@ INSTALACION
 
 USO
 ---
+
+Antes de ejecutar el programa se tiene que setear la variable del sistema con el path a la librería g2o compilada anteriormente:
+    
+    export LD_LIBRARY_PATH="/path_al_repo/triangulacionDeBayas/include/Thirdparty/g2o/lib/"
+    
+Luego, para ejecutarlo
+
     cd Release
     ./triangulacionDeBayas ruta_archivo_de_calibracion ruta_archivo_de_correspondencias distancia_en_cm_entre_puntos_de_calibracion
 
