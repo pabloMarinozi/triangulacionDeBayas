@@ -30,17 +30,18 @@ INSTALACION
 
 1. Compilar g2o con cmake
 
-    cd include/Thirdparty/g2o
-    mkdir build
-    cd build
-    cmake ../
-    make
+        cd include/Thirdparty/g2o
+        mkdir build
+        cd build
+        cmake ../
+        make
     
 2. Compilar triangulacionDeBayas con g++
-    cd Release
-    editar la variables del archivo build.sh para que coincidan con los lugares donde se instalaron las dependencias en su PC
-    chmod +x build.sh
-    ./build.sh
+
+        cd Release
+        #editar la variables del archivo build.sh para que coincidan con los lugares donde se instalaron las dependencias en su PC
+        chmod +x build.sh
+        ./build.sh
 
 
 
@@ -50,4 +51,5 @@ USO
     ./triangulacionDeBayas ruta_archivo_de_calibracion ruta_archivo_de_correspondencias distancia_en_cm_entre_puntos_de_calibracion
 
 La carpeta /data contiene archivos de ejemplo que sirven como input para la siguiente llamada
-./triangulacionDeBayas ../data/camaraCarlos1080.yaml ../data/bundles/12/bundles.csv 10.16
+
+    ./triangulacionDeBayas ../data/camaraCarlos1080.yaml ../data/bundles/12/bundles.csv 10.16
