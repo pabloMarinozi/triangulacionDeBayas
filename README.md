@@ -5,7 +5,7 @@ CONTENIDO DE ESTE ARCHIVO
 
  * Introduccion
  * Dependencias
- * Instalaci
+ * Instalación 
  * Uso
 
 
