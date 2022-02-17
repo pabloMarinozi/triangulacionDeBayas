@@ -20,9 +20,15 @@ DEPENDENCIAS
 Este programa fue testeado en Ubuntu 20.04, pero debería ser facil de compilar en otras plataformas. Para funcionar correctamente, requiere haber instalado las siguientes librerías:
 
 * C++11 o superior
-* Eigen3: requerido por g2o. Las instrucciones para la descarga e instalación se pueden encontrar en http://eigen.tuxfamily.org. Se requiere al menos la versión 3.1.0.
+* Eigen3: g2o requiere al menos la versión 3.1.0.
+
+        sudo apt install libeigen3-dev
+
 * g2o: es un framework C++ de código abierto para optimizar funciones de error no lineales basadas en grafos. La versión modificada necesaria para ejecutar este programa se encuentra en la carpeta include/Thirdparty/g2o.
-* OpenCV: Usamos OpenCV para manipular imágenes y trabajar con datos tanto 2D como 3D. Las instrucciones de descarga e instalación se pueden encontrar en: http://opencv.org. Se requiere al menos la versión 2.4.3. Probado con OpenCV 4.2.0.
+* OpenCV: Usamos OpenCV para manipular imágenes y trabajar con datos tanto 2D como 3D. Se requiere al menos la versión 2.4.3. Probado con OpenCV 4.2.0.
+
+        sudo apt install libopencv-dev
+
 
 
 INSTALACION
@@ -47,6 +53,13 @@ INSTALACION
 
 USO
 ---
+
+Antes de ejecutar el programa se tiene que setear la variable del sistema con el path a la librería g2o compilada anteriormente:
+    
+    export LD_LIBRARY_PATH="/path_al_repo/triangulacionDeBayas/include/Thirdparty/g2o/lib/"
+    
+Luego, para ejecutarlo
+
     cd Release
     ./triangulacionDeBayas ruta_archivo_de_calibracion ruta_archivo_de_correspondencias distancia_en_cm_entre_puntos_de_calibracion
 
