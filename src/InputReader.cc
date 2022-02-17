@@ -63,6 +63,7 @@ InputReader::InputReader(const string &strSettingPath,
 		} else {
 			numFrames = (cols.size() - 3) / numcolsperframe;
 			int id_track = atoi(cols[0].c_str());
+			labels[id_track] = cols[1];
 			if (cols[1] == "cal_1")
 				track_cal_1 = id_track;
 			else if (cols[1] == "cal_2")

@@ -79,7 +79,10 @@ void OutputWriter::guardarResultados(int N,
 		map<int, vector<int> > track_id_map,
 		map<int, cv::Point3d> mps,
 		int cal_1, int cal_2, map<int, string> names,
-		map<int, vector<float> > radios) {
+		map<int, vector<float> > radios,
+		map<int, vector<float> > vols_rep_map,
+		map<int, vector<float> > vols_real_map,
+		map<int, string> labels) {
 	ofstream myfile;
 	myfile.open(strOutputPath+"/Reproyecciones.csv");
 	if (myfile.is_open()) {
@@ -87,7 +90,7 @@ void OutputWriter::guardarResultados(int N,
 		//Escribe encabezados
 		myfile << "track_id,label,x,y,z";
 		for (int i = 0; i < N; ++i){
-			myfile << ",img_name_"<<i<<",x_"<<i<<",y_"<<i<<",r_"<<i<<",xrep_"<<i<<",yrep_"<<i<<",error_"<<i<<",x1cm_"<<i<<",y1cm_"<<i;
+			myfile << ",img_name_"<<i<<",x_"<<i<<",y_"<<i<<",r_"<<i<<",vol_real_"<<i<<",vol_rep_"<<i<<",xrep_"<<i<<",yrep_"<<i<<",error_"<<i<<",x1cm_"<<i<<",y1cm_"<<i;
 		}
 		myfile << endl;
 
@@ -99,9 +102,10 @@ void OutputWriter::guardarResultados(int N,
 			myfile << track_id;
 
 			//columna "label"
-			if(track_id==cal_1) myfile << ",cal_1";
-			else if(track_id==cal_2) myfile << ",cal_2";
-			else myfile << ",baya";
+//			if(track_id==cal_1) myfile << ",cal_1";
+//			else if(track_id==cal_2) myfile << ",cal_2";
+//			else myfile << ",baya";
+			myfile <<","<< labels[track_id];
 
 			//columnas "x","y" y "z"
 			cv::Point3d p = iter->second;
@@ -126,6 +130,11 @@ void OutputWriter::guardarResultados(int N,
 					myfile << ","<<observacion.x<< ","<<observacion.y;
 					//columna "r_"
 					myfile << ","<< radios[frame_index][index_del_track_en_el_frame];
+					//columnas "vol_real_" y "vol_rep_"
+					myfile << ","
+							<< vols_real_map[frame_index][index_del_track_en_el_frame]
+							<< ","
+							<< vols_rep_map[frame_index][index_del_track_en_el_frame];
 					//columnas "x_rep_" e "y_rep_"
 					cv::Point2f reproyeccion = rep_map[frame_index][index_del_track_en_el_frame];
 					myfile << ","<<reproyeccion.x<< ","<<reproyeccion.y;
@@ -141,6 +150,7 @@ void OutputWriter::guardarResultados(int N,
 					myfile << ",NULL"; //columna "img_name_"
 					myfile << ",NULL,NULL"; //columnas "x_" e "y_"
 					myfile << ",NULL"; //columna "r_"
+					myfile << ",NULL,NULL";//columnas "vol_real_" y "vol_rep_"
 					myfile << ",NULL,NULL"; //columnas "x_rep_" e "y_rep_"
 					myfile << ",NULL"; //columna "error_"
 					myfile << ",NULL,NULL"; //columnas "x_1cm_" e "y_1cm_"

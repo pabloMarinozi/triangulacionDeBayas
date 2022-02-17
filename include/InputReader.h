@@ -38,6 +38,8 @@ public:
 	int getFrame0() const {return frame0;}
 	int getFrame1() const {return frame1;}
 	const map<int, vector<float> >& getRadios() const {return radios;}
+	const map<int, string>& getLabels() const {return labels;}
+
 	bool error;
 
 protected:
@@ -47,6 +49,7 @@ protected:
 	map<int, vector<cv::Point2f> > kps;
 	map<int, vector<int> > track_ids;
 	map<int, string> img_names;
+	map<int, string> labels;
 	map<int, vector<float> > radios;
 
 	int track_cal_1;
