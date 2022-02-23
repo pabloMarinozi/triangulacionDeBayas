@@ -31,34 +31,35 @@ OutputWriter::OutputWriter(string strOutputPath, string strMatchesPath){
 	directory = directory.substr(last_slash_idx2);
 
 
-	char* ruta;
-	sprintf(ruta, "%s", strOutputPath.c_str());
-	DIR *dirp = opendir(ruta);
+	//char* ruta = "";
+	//sprintf(ruta, "%s", strOutputPath.c_str());
+	DIR *dirp = opendir(strOutputPath.c_str());
 	if (dirp == NULL) {
 		char* comando = new char[510];
 
-		sprintf(comando, "mkdir %s", ruta);
+		sprintf(comando, "mkdir %s", strOutputPath.c_str());
 		std::system(comando);
-		cout << "Se ha creado el directorio de salida en la ruta " << ruta
+		cout << "Se ha creado el directorio de salida en la ruta " << strOutputPath
 				<< endl;
 	} else {
-		cout << "Ya existia el directorio de salida en la ruta " << ruta
+		cout << "Ya existia el directorio de salida en la ruta " << strOutputPath
 				<< endl;
 	}
-	sprintf(ruta, "%s%s", strOutputPath.c_str(),directory.c_str());
-	DIR *dirp2 = opendir(ruta);
+	//sprintf(ruta, "%s%s", strOutputPath.c_str(),directory.c_str());
+	strOutputPath = strOutputPath+directory;
+	DIR *dirp2 = opendir(strOutputPath.c_str());
 	if (dirp2 == NULL) {
 		char* comando = new char[510];
 
-		sprintf(comando, "mkdir %s", ruta);
+		sprintf(comando, "mkdir %s", strOutputPath.c_str());
 		std::system(comando);
-		cout << "Se ha creado el directorio de salida en la ruta " << ruta
+		cout << "Se ha creado el directorio de salida en la ruta " << strOutputPath
 				<< endl;
 	} else {
-		cout << "Ya existia el directorio de salida en la ruta " << ruta
+		cout << "Ya existia el directorio de salida en la ruta " << strOutputPath
 				<< endl;
 	}
-	this->strOutputPath = ruta;
+	this->strOutputPath = strOutputPath;
 }
 
 void OutputWriter::guardarImagenes(vector<cv::Mat> imgs, map<int, string> names){

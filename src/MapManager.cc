@@ -89,7 +89,7 @@ void MapManager::CreateInitialMapMonocular(MapCreationDTO dto) {
 	cout << "New Map created with " << mpMap->MapPointsInMap() << " points from frames "<<dto.getFrame0()<<" and "<<dto.getFrame1()
 			<< endl;
 	bool mbStopGBA = false;
-	Optimizer::GlobalBundleAdjustemnt(mpMap, 20, &mbStopGBA, pKFcur->mnId,
+	Optimizer::GlobalBundleAdjustemnt(mpMap, 20000, &mbStopGBA, pKFcur->mnId,
 			false);
 
 	mnLastKeyFrameId = pKFcur->mnId;
@@ -209,7 +209,7 @@ void MapManager::CreateNewKeyFrame(int id, InputReader* mpInputReader) {
 					}
 				}
 
-				if (!pMP) {    //Falló la triangulación
+				if (!pMP || pMP->isBad()) {    //Falló la triangulación
 					cout << "Falló la triangulación del mapPoint"<< tracks[index]
 							<< " con los frames " << id << " y " << idAnterior << endl;
 					continue;

@@ -106,8 +106,8 @@ int main(int argc, char **argv) {
 				mpInputReader);
 		if (scaleFactor > 0)
 			mpMapManager->ScaleMap(scaleFactor);
-//		int cal_1=mpInputReader->getTrackCal1(), cal_2 =mpInputReader->getTrackCal2();
-//		cout<<mpMapManager->GetDistanceCal1Cal2(cal_1,cal_2)<<endl;
+		int cal_1=mpInputReader->getTrackCal1(), cal_2 =mpInputReader->getTrackCal2();
+		cout<<mpMapManager->GetDistanceCal1Cal2(cal_1,cal_2)<<endl;
 	}
 
 	//Realizar Reproyecciones para verificar Resultados
@@ -174,7 +174,8 @@ int main(int argc, char **argv) {
 	map<int, vector<cv::Point2f> > kps = mpInputReader->getKps();
 	map<int, vector<int> > track_ids = mpInputReader->getTrackIds();
 	map<int, string> img_names = mpInputReader->getImgNames();
-	OutputWriter* mpOutputWriter = new OutputWriter("output", string(argv[2]));
+	string str1 = "output"; string str2 = string(argv[2]);
+	OutputWriter* mpOutputWriter = new OutputWriter(str1, str2);
 	mpOutputWriter->guardarImagenes(imgs, img_names);
 	map<int, string> labels = mpInputReader->getLabels();
 	int cal_1 = mpInputReader->getTrackCal1(), cal_2 =
