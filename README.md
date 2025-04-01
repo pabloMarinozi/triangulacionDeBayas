@@ -51,9 +51,21 @@ Antes de ejecutar el programa se tiene que setear la variable del sistema con el
     
 Luego, para ejecutarlo
 
-    cd Release
-    ./triangulacionDeBayas ruta_archivo_de_calibracion ruta_archivo_de_correspondencias distancia_en_cm_entre_puntos_de_calibracion
+    Release/triangulacionDeBayas \
+      -c ruta_archivo_de_calibracion \
+      -d ruta_archivo_de_correspondencias \
+      -x distancia_en_cm_entre_esquinas_de_qr \
+      -i ruta_carpeta_con_frames \
+      -o ruta_carpeta_de_salida \
+      --init_distance distancia_mínima_entre_frames_de_inicializacion
+
 
 La carpeta /data contiene archivos de ejemplo que sirven como input para la siguiente llamada
 
-    ./triangulacionDeBayas ../data/camaraCarlos1080.yaml ../data/bundles/12/bundles.csv 10.16
+    Release/triangulacionDeBayas \
+      -c data/calib/MotorolaG200_Javo_Vertical.yaml \
+      -d data/VID_20230322_173621/bundles.csv \
+      -x 2.1 \
+      -i data/VID_20230322_173621/ \
+      -o data/VID_20230322_173621/output \
+      --init_distance 15

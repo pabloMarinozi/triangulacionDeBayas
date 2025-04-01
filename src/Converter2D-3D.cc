@@ -1,6 +1,7 @@
 #include <Converter2D-3D.h>
 #include <KeyFrame.h>
 #include <MapPoint.h>
+#include <Map.h>
 #include <opencv2/core/hal/interface.h>
 #include <opencv2/core/mat.hpp>
 #include <opencv2/core/mat.inl.hpp>
@@ -10,23 +11,49 @@
 #include <algorithm>
 #include <iostream>
 #include <utility>
+#define RESET   "\033[0m"
+#define RED     "\033[31m"      /* Red */
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"      /* Yellow */
+#define BLUE    "\033[34m"      /* Blue */
 
 Converter::Converter() {
 }
 
-vector<cv::Point2f> Converter::ReprojectAllMapPointsOnKeyFrame(KeyFrame* kf){
+map<int, cv::Point2f> Converter::ReprojectVisibleMapPointsOnKeyFrame(KeyFrame* kf){
 	vector<MapPoint*> visibles = kf->GetMapPointMatches();
-	vector<cv::Point2f> rep;
-	for (int i = 0; i < visibles.size(); ++i) {
-
-		MapPoint* pMP = visibles[i];
+	map<int, cv::Point2f> rep;
+	for (MapPoint* pMP : visibles) {
 		if(pMP){
-			rep.push_back(ReprojectMapPointOnKeyFrame(pMP,kf));
+			rep[pMP->mnId] = ReprojectMapPointOnKeyFrame(pMP,kf);
 		}
-		else{
+		// else{
+		// 	rep[pMP->mnId] = cv::Point2f(-1,-1);
+		// }
+	}
+	return rep;
+}
 
-			rep.push_back(cv::Point2f(-1,-1));
+
+map<int, cv::Point2f> Converter::ReprojectAllMapPointsOnKeyFrame(KeyFrame* kf, ORB_SLAM2::Map* mpMap){
+	vector<MapPoint*> mps = mpMap->GetAllMapPoints();
+	vector<MapPoint*> visibles = kf->GetMapPointMatches();
+	map<int, cv::Point2f > rep;
+	for (MapPoint* pMP : mps) {
+		if(pMP){
+			//bool observada = std::find(visibles.begin(), visibles.end(), pMP) == visibles.end();
+			cv::Point2f r = ReprojectMapPointOnKeyFrame(pMP,kf);
+			//pair<cv::Point2f,bool> p = make_pair(r,observada);
+			// bool visible = r.x < kf->mnMaxX && r.x > kf->mnMinX && r.y < kf->mnMaxY && r.y > kf->mnMinY;
+			// if(!visible) cout<<RED<<"La baya "<<pMP->mnId<<" era visible en el frame "<<kf->mnId<<RESET<<endl;
+			// else if(!observada){
+			// 	cout<<GREEN<< "La baya "<<pMP->mnId<<" era visible en el frame "<<kf->mnId<<", pero no fue observada"<<RESET<<endl;
+			// }
+			rep[pMP->mnId] = r;
 		}
+		// else{
+		// 	rep[pMP->mnId] = cv::Point2f(-1,-1);
+		// }
 	}
 	return rep;
 }

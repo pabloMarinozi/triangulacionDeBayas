@@ -27,7 +27,11 @@ src/OutputWriter.o: ../src/OutputWriter.cc \
  /usr/include/opencv4/opencv2/core/optim.hpp \
  /usr/include/opencv4/opencv2/core/ovx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/OutputWriter.h
+ /usr/include/opencv4/opencv2/imgproc.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/OutputWriter.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/InputReader.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapManager.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/colormod.h
 
 /usr/include/opencv4/opencv2/core/mat.hpp:
 
@@ -85,4 +89,12 @@ src/OutputWriter.o: ../src/OutputWriter.cc \
 
 /usr/include/opencv4/opencv2/core/cvdef.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/OutputWriter.h:
+/usr/include/opencv4/opencv2/imgproc.hpp:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/OutputWriter.h:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/InputReader.h:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapManager.h:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/colormod.h:

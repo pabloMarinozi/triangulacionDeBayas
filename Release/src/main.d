@@ -1,5 +1,5 @@
 src/main.o: ../src/main.cpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Initializer.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Initializer.h \
  /usr/include/opencv4/opencv2/core/mat.hpp \
  /usr/include/opencv4/opencv2/core/matx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
@@ -18,9 +18,12 @@ src/main.o: ../src/main.cpp \
  /usr/include/opencv4/opencv2/core/types.hpp \
  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/InputReader.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapCreationDTO.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapManager.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/InputReader.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapCreationDTO.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapManager.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/OutputWriter.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/colormod.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/InitializationStrategies.h \
  /usr/include/opencv4/opencv2/imgcodecs.hpp \
  /usr/include/opencv4/opencv2/core.hpp \
  /usr/include/opencv4/opencv2/core/version.hpp \
@@ -31,10 +34,9 @@ src/main.o: ../src/main.cpp \
  /usr/include/opencv4/opencv2/core/optim.hpp \
  /usr/include/opencv4/opencv2/core/ovx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
- /usr/include/opencv4/opencv2/imgproc.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/OutputWriter.h
+ /usr/include/opencv4/opencv2/imgproc.hpp
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Initializer.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Initializer.h:
 
 /usr/include/opencv4/opencv2/core/mat.hpp:
 
@@ -72,11 +74,17 @@ src/main.o: ../src/main.cpp \
 
 /usr/include/opencv4/opencv2/core/mat.inl.hpp:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/InputReader.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/InputReader.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapCreationDTO.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapCreationDTO.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapManager.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapManager.h:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/OutputWriter.h:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/colormod.h:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/InitializationStrategies.h:
 
 /usr/include/opencv4/opencv2/imgcodecs.hpp:
 
@@ -99,5 +107,3 @@ src/main.o: ../src/main.cpp \
 /usr/include/opencv4/opencv2/core/cvdef.h:
 
 /usr/include/opencv4/opencv2/imgproc.hpp:
-
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/OutputWriter.h:

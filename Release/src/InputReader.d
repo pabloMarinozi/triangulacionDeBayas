@@ -1,5 +1,5 @@
 src/InputReader.o: ../src/InputReader.cc \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/InputReader.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/InputReader.h \
  /usr/include/opencv4/opencv2/core/types.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
  /usr/include/opencv4/opencv2/core/hal/interface.h \
@@ -15,6 +15,7 @@ src/InputReader.o: ../src/InputReader.cc \
  /usr/include/opencv4/opencv2/core/traits.hpp \
  /usr/include/opencv4/opencv2/core/saturate.hpp \
  /usr/include/opencv4/opencv2/core/fast_math.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/colormod.h \
  /usr/include/opencv4/opencv2/calib3d.hpp \
  /usr/include/opencv4/opencv2/core.hpp \
  /usr/include/opencv4/opencv2/core/version.hpp \
@@ -34,7 +35,7 @@ src/InputReader.o: ../src/InputReader.cc \
  /usr/include/opencv4/opencv2/flann/config.h \
  /usr/include/opencv4/opencv2/core/affine.hpp
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/InputReader.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/InputReader.h:
 
 /usr/include/opencv4/opencv2/core/types.hpp:
 
@@ -65,6 +66,8 @@ src/InputReader.o: ../src/InputReader.cc \
 /usr/include/opencv4/opencv2/core/saturate.hpp:
 
 /usr/include/opencv4/opencv2/core/fast_math.hpp:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/colormod.h:
 
 /usr/include/opencv4/opencv2/calib3d.hpp:
 

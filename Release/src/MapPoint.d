@@ -1,7 +1,7 @@
 src/MapPoint.o: ../src/MapPoint.cc \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Map.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/KeyFrame.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapPoint.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Map.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/KeyFrame.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapPoint.h \
  /usr/include/opencv4/opencv2/core/mat.hpp \
  /usr/include/opencv4/opencv2/core/matx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
@@ -30,11 +30,11 @@ src/MapPoint.o: ../src/MapPoint.cc \
  /usr/include/opencv4/opencv2/core/ovx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Map.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Map.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/KeyFrame.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/KeyFrame.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapPoint.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapPoint.h:
 
 /usr/include/opencv4/opencv2/core/mat.hpp:
 

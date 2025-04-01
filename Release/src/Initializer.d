@@ -1,5 +1,5 @@
 src/Initializer.o: ../src/Initializer.cc \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Initializer.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Initializer.h \
  /usr/include/opencv4/opencv2/core/mat.hpp \
  /usr/include/opencv4/opencv2/core/matx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
@@ -18,6 +18,7 @@ src/Initializer.o: ../src/Initializer.cc \
  /usr/include/opencv4/opencv2/core/types.hpp \
  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/colormod.h \
  /usr/include/opencv4/opencv2/core.hpp \
  /usr/include/opencv4/opencv2/core/version.hpp \
  /usr/include/opencv4/opencv2/core/persistence.hpp \
@@ -28,7 +29,7 @@ src/Initializer.o: ../src/Initializer.cc \
  /usr/include/opencv4/opencv2/core/ovx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Initializer.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Initializer.h:
 
 /usr/include/opencv4/opencv2/core/mat.hpp:
 
@@ -65,6 +66,8 @@ src/Initializer.o: ../src/Initializer.cc \
 /usr/include/opencv4/opencv2/core/bufferpool.hpp:
 
 /usr/include/opencv4/opencv2/core/mat.inl.hpp:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/colormod.h:
 
 /usr/include/opencv4/opencv2/core.hpp:
 

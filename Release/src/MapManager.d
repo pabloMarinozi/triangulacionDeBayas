@@ -1,7 +1,7 @@
 src/MapManager.o: ../src/MapManager.cc \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Converter2D-3D.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/KeyFrame.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapPoint.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Converter2D-3D.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/KeyFrame.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapPoint.h \
  /usr/include/opencv4/opencv2/core/mat.hpp \
  /usr/include/opencv4/opencv2/core/matx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
@@ -20,10 +20,10 @@ src/MapManager.o: ../src/MapManager.cc \
  /usr/include/opencv4/opencv2/core/types.hpp \
  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/InputReader.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Map.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapCreationDTO.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapManager.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Map.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/InputReader.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapCreationDTO.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapManager.h \
  /usr/include/opencv4/opencv2/core.hpp \
  /usr/include/opencv4/opencv2/core/version.hpp \
  /usr/include/opencv4/opencv2/core/persistence.hpp \
@@ -33,9 +33,9 @@ src/MapManager.o: ../src/MapManager.cc \
  /usr/include/opencv4/opencv2/core/optim.hpp \
  /usr/include/opencv4/opencv2/core/ovx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Optimizer.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/sim3.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3_ops.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Optimizer.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/sim3.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3_ops.h \
  /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
@@ -190,13 +190,14 @@ src/MapManager.o: ../src/MapManager.cc \
  /usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
  /usr/include/eigen3/Eigen/src/Geometry/Umeyama.h \
  /usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SSE.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3_ops.hpp
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3_ops.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/colormod.h
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Converter2D-3D.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Converter2D-3D.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/KeyFrame.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/KeyFrame.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapPoint.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapPoint.h:
 
 /usr/include/opencv4/opencv2/core/mat.hpp:
 
@@ -234,13 +235,13 @@ src/MapManager.o: ../src/MapManager.cc \
 
 /usr/include/opencv4/opencv2/core/mat.inl.hpp:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/InputReader.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Map.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Map.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/InputReader.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapCreationDTO.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapCreationDTO.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapManager.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapManager.h:
 
 /usr/include/opencv4/opencv2/core.hpp:
 
@@ -260,11 +261,11 @@ src/MapManager.o: ../src/MapManager.cc \
 
 /usr/include/opencv4/opencv2/core/cvdef.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Optimizer.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Optimizer.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/sim3.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/sim3.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3_ops.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3_ops.h:
 
 /usr/include/eigen3/Eigen/Core:
 
@@ -582,4 +583,6 @@ src/MapManager.o: ../src/MapManager.cc \
 
 /usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SSE.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3_ops.hpp:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3_ops.hpp:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/colormod.h:

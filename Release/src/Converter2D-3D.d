@@ -1,7 +1,7 @@
 src/Converter2D-3D.o: ../src/Converter2D-3D.cc \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Converter2D-3D.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/KeyFrame.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapPoint.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Converter2D-3D.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/KeyFrame.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapPoint.h \
  /usr/include/opencv4/opencv2/core/mat.hpp \
  /usr/include/opencv4/opencv2/core/matx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
@@ -20,6 +20,7 @@ src/Converter2D-3D.o: ../src/Converter2D-3D.cc \
  /usr/include/opencv4/opencv2/core/types.hpp \
  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Map.h \
  /usr/include/opencv4/opencv2/core.hpp \
  /usr/include/opencv4/opencv2/core/version.hpp \
  /usr/include/opencv4/opencv2/core/persistence.hpp \
@@ -30,11 +31,11 @@ src/Converter2D-3D.o: ../src/Converter2D-3D.cc \
  /usr/include/opencv4/opencv2/core/ovx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Converter2D-3D.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Converter2D-3D.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/KeyFrame.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/KeyFrame.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapPoint.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapPoint.h:
 
 /usr/include/opencv4/opencv2/core/mat.hpp:
 
@@ -71,6 +72,8 @@ src/Converter2D-3D.o: ../src/Converter2D-3D.cc \
 /usr/include/opencv4/opencv2/core/bufferpool.hpp:
 
 /usr/include/opencv4/opencv2/core/mat.inl.hpp:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Map.h:
 
 /usr/include/opencv4/opencv2/core.hpp:
 

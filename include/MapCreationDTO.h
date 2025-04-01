@@ -5,9 +5,12 @@
 #include <opencv2/core/mat.inl.hpp>
 #include <opencv2/core/types.hpp>
 #include <vector>
+#include <map>
 
 
 class MapCreationDTO{
+    typedef pair<int, int> Match;
+
 public:
 	cv::Mat Tcw1;
 	cv::Mat Tcw2;
@@ -15,7 +18,7 @@ public:
 	std::vector<cv::KeyPoint> mvKeys2;
 	std::vector<cv::KeyPoint> mvKeysUn1;
 	std::vector<cv::KeyPoint> mvKeysUn2;
-	std::vector<int> mvIniMatches;
+	std::map<int, Match> mvIniMatches;
 	std::vector<cv::Point3f> mvIniP3D;
 	std::vector<int> mvTracks;
 	std::vector<int> bordes;
@@ -39,11 +42,11 @@ public:
 		mK = k;
 	}
 
-	const std::vector<int>& getMvIniMatches() const {
+	const std::map<int, Match>& getMvIniMatches() const {
 		return mvIniMatches;
 	}
 
-	void setMvIniMatches(const std::vector<int>& mvIniMatches) {
+	void setMvIniMatches(const std::map<int, Match>& mvIniMatches) {
 		this->mvIniMatches = mvIniMatches;
 	}
 

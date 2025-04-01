@@ -7,6 +7,7 @@
 //============================================================================
 
 #include <InputReader.h>
+#include <colormod.h>
 #include <opencv2/calib3d.hpp>
 #include <opencv2/core/hal/interface.h>
 #include <opencv2/core/mat.hpp>
@@ -14,6 +15,7 @@
 #include <opencv2/core/persistence.hpp>
 #include <opencv2/core/types.hpp>
 #include <algorithm>
+#include <random>
 #include <cstddef>
 #include <cstdlib>
 #include <fstream>
@@ -21,6 +23,7 @@
 #include <string>
 
 using namespace std;
+typedef pair<int, int> Match;
 
 vector<string> getCols(string str) {
 	vector<string> cols;
@@ -39,19 +42,98 @@ vector<string> getCols(string str) {
 	return cols;
 }
 
-InputReader::InputReader(const string &strSettingPath,
-		const string &strMatchesPath) :
-		strSettingPath(strSettingPath), strMatchesPath(strMatchesPath) {
+std::vector<std::string> split(std::string s, std::string delimiter) {
+    size_t pos_start = 0, pos_end, delim_len = delimiter.length();
+    std::string token;
+    std::vector<std::string> res;
+
+    while ((pos_end = s.find(delimiter, pos_start)) != std::string::npos) {
+        token = s.substr (pos_start, pos_end - pos_start);
+        pos_start = pos_end + delim_len;
+        res.push_back (token);
+    }
+
+    res.push_back (s.substr (pos_start));
+    return res;
+}
+
+InputParser::InputParser (int &argc, char **argv){
+    for (int i=1; i < argc; ++i)
+        this->tokens.push_back(std::string(argv[i]));
+}
+
+std::string InputParser::getCmdOption(std::string option) {
+    std::vector<std::string>::iterator itr;
+    itr =  std::find(this->tokens.begin(), this->tokens.end(), option);
+    if (itr != this->tokens.end() && ++itr != this->tokens.end()){
+        return *itr;
+    }
+    static std::string empty_string("");
+    return empty_string;
+}
+
+/// @author iain
+bool InputParser::cmdOptionExists(std::string option) {
+    return std::find(this->tokens.begin(), this->tokens.end(), option)
+           != this->tokens.end();
+}
+
+string c = "-c"; string o = "-o"; string d = "-d"; string i = "-i"; string x = "-x"; string imd = "--init_distance";
+
+void InputParser::checkArgs(){
+	Color::Modifier red(Color::FG_RED);
+	Color::Modifier yellow(Color::FG_YELLOW);
+	Color::Modifier def(Color::FG_DEFAULT);     	
+	if(!cmdOptionExists(c)){
+		cout<<red<<"No se ha pasado el argumento '-c' con la ruta al archivo de calibración."<<def<<endl;
+		calibFlag = false;
+	}else calibFlag = true;
+	if(!cmdOptionExists(o)){
+		cout<<red<<"No se ha pasado el argumento '-o' con la ruta de salida."<<def<<endl;
+		outputFlag = false;
+	}else outputFlag = true;
+	if(!cmdOptionExists(d)){
+		cout<<yellow<<"No se ha pasado el argumento '-d' con la ruta del archivo con los bundles de las bayas."<<def<<endl;
+		detectionsFlag = false;
+	}else detectionsFlag = true;
+	if(!cmdOptionExists(i)){
+		cout<<yellow<<"No se ha pasado el argumento '-i' con la ruta a la carpeta de imágenes."<<def<<endl;
+		imagesFlag = false;
+	}else imagesFlag = true;
+	if(!cmdOptionExists(x)){
+		cout<<yellow<<"No se ha pasado el argumento '-x' con la distancia en cm usada para calibrar"<<def<<endl;
+		scaleFlag = false;
+	}else scaleFlag = true;
+	if(!cmdOptionExists(imd)){
+		cout<<yellow<<"No se ha pasado el argumento '--init_distance' con la distancia mínima entre frames inicializadores"<<def<<endl;
+		initFlag = false;
+	}else initFlag = true;
+}
+
+InputReader::InputReader(InputParser* input){
+	calibPath = input->getCmdOption(c);
+	if(input->detectionsFlag) parseDetectionsFile(input->getCmdOption(d));
+	if(input->imagesFlag) imagesPath = input->getCmdOption(i);
+	cout << "imagesPath " << imagesPath;
+	if(input->initFlag) init_min_dist = stoi(input->getCmdOption(imd));
+	if(input->scaleFlag) scaleDistance = stof(input->getCmdOption(x));
+}
+
+void InputReader::parseDetectionsFile(string detectionMatchesPath){
 	std::string str;
-	ifstream myfile;
-	myfile.open(strMatchesPath);
+	ifstream matchesFile;
+	matchesFile.open(detectionMatchesPath);
+	track_cal_1 = -1;
+	track_cal_2 = -1;
+	track_val_1 = 0;
+	track_val_2 = 0;
 	error = false;
 	int numcolsperframe = 4;
-	getline(myfile, str); //se deshace del encabezado
-	while (getline(myfile, str)) {
+	getline(matchesFile, str); //se deshace del encabezado
+	while (getline(matchesFile, str)) {
 		vector<string> cols = getCols(str);
 		if (cols.size() % numcolsperframe != 3) {
-			cout << "La cantidad de columnas de " << strMatchesPath
+			cout << "La cantidad de columnas de " << detectionMatchesPath
 					<< " no coincide con la cantidad de frames indicada.";
 			error = true;
 			break;
@@ -64,10 +146,10 @@ InputReader::InputReader(const string &strSettingPath,
 			numFrames = (cols.size() - 3) / numcolsperframe;
 			int id_track = atoi(cols[0].c_str());
 			labels[id_track] = cols[1];
-			if (cols[1] == "cal_1")
-				track_cal_1 = id_track;
-			else if (cols[1] == "cal_2")
-				track_cal_2 = id_track;
+			if (cols[1] == "cal_1") track_cal_1 = id_track;
+			else if (cols[1] == "cal_2") track_cal_2 = id_track;
+			if (cols[1] == "val_1") track_val_1 = id_track;
+			else if (cols[1] == "val_2") track_val_2 = id_track;
 			for (int i = 0; i < numFrames; i++) {
 				if (cols[i * numcolsperframe + 3] != "NULL") {
 					img_names[i] = cols[i * numcolsperframe + 3];
@@ -75,20 +157,29 @@ InputReader::InputReader(const string &strSettingPath,
 							atof(cols[i * numcolsperframe + 4].c_str()),
 							atof(cols[i * numcolsperframe + 5].c_str()));
 					kps[i].push_back(kp);
-					radios[i].push_back(
-							atof(cols[i * numcolsperframe + 6].c_str()));
+					radios[i][id_track] =
+							atof(cols[i * numcolsperframe + 6].c_str());
 					track_ids[i].push_back(id_track);
 				}
 			}
+			allTracks.push_back(id_track);
 		}
 	}
-	frame0 = -1;
-	frame1 = -1;
+}
+
+void InputReader::showRadios(){
+	for(auto const& imap: radios){
+		cout << "Frame "<<imap.first<<endl<<endl;
+		map<int, float> radios_frame = imap.second;
+		for(auto const& imap2: radios_frame){
+			cout << imap2.first <<"	"<<imap2.second<<endl;
+		}
+	}
 
 }
 
 cv::Mat InputReader::GetK() {
-	cv::FileStorage fSettings(strSettingPath, cv::FileStorage::READ);
+	cv::FileStorage fSettings(calibPath, cv::FileStorage::READ);
 	float fx = fSettings["Camera.fx"];
 	float fy = fSettings["Camera.fy"];
 	float cx = fSettings["Camera.cx"];
@@ -102,9 +193,17 @@ cv::Mat InputReader::GetK() {
 	return K;
 }
 
+float InputReader::GetFocalDistance() {
+	cv::FileStorage fSettings(calibPath, cv::FileStorage::READ);
+	float fx = fSettings["Camera.fx"];
+	float fy = fSettings["Camera.fy"];
+	return (fx+fy)/2;
+}
+
+
 vector<int> InputReader::GetImageBounds(cv::Mat K) {
 	int mnMinX, mnMinY, mnMaxX, mnMaxY;
-	cv::FileStorage fSettings(strSettingPath, cv::FileStorage::READ);
+	cv::FileStorage fSettings(calibPath, cv::FileStorage::READ);
 	cv::Mat DistCoef(4, 1, CV_32F);
 	DistCoef.at<float>(0) = fSettings["Camera.k1"];
 	DistCoef.at<float>(1) = fSettings["Camera.k2"];
@@ -165,33 +264,72 @@ std::string dirnameOf(const std::string& fname) {
 	return (std::string::npos == pos) ? "" : fname.substr(0, pos);
 }
 
-vector<int> InputReader::GetMatches(int frameId1, int frameId2) {
-	vector<int> matches;
+
+
+/**
+ * Get observations of the same 3D Points on both frames.
+ *
+ * @params frameId1, frameId2 ids of the frames whose matches are being looked for.
+ * @return a map whith trackId as keys and matches as values 
+ */
+map<int, Match> InputReader::GetMatches(int frameId1, int frameId2) {
+	map<int, Match> matches;
 	vector<int> tracks1 = track_ids[frameId1];
 	vector<int> tracks2 = track_ids[frameId2];
 	for (int i1 = 0; i1 < tracks1.size(); ++i1) {
-		int match_index = -1;
+		int match_index = -1, trackId = tracks1[i1];
 		for (int i2 = 0; i2 < tracks2.size(); ++i2) {
-			if (tracks1[i1] == tracks2[i2]) {
+			if (trackId == tracks2[i2]) {
 				match_index = i2;
 				break;
 			}
 		}
-		matches.push_back(match_index);
+		if(match_index>0) matches[trackId] = make_pair(i1, match_index);
 	}
 	return matches;
 }
 
-vector<cv::Point2f> InputReader::GetPoints(int frameId) {
-	return kps[frameId];
+map<int, Match> InputReader::GetMatchesSinOutliers(int frameId1, int frameId2, vector<int> outliers) {
+	map<int, Match> matches;
+	vector<int> tracks1 = track_ids[frameId1];
+	vector<int> tracks2 = track_ids[frameId2];
+	for (int i1 = 0; i1 < tracks1.size(); ++i1) {
+		int match_index = -1, trackId = tracks1[i1];
+		if (std::find(outliers.begin(), outliers.end(), trackId) != outliers.end())
+			continue;
+		for (int i2 = 0; i2 < tracks2.size(); ++i2) {
+			if (trackId == tracks2[i2]) {
+				match_index = i2;
+				break;
+			}
+		}
+		if(match_index>=0) matches[trackId] = make_pair(i1, match_index);
+	}
+	return matches;
+}
+
+
+map<int, cv::Point2f> InputReader::GetPoints(int frameId) {
+	map<int, cv::Point2f> mKps;
+	vector<cv::Point2f> vKps = kps[frameId];
+	vector<int> tracks = track_ids[frameId];
+	for (int j = 0; j < vKps.size(); ++j) {
+		int t  = tracks[j];
+		mKps[t] = vKps[j];
+	}
+	return mKps;
 }
 
 int InputReader::GetNumFrames() {
 	return numFrames;
 }
 
+int InputReader::GetInitDist() {
+	return init_min_dist;
+}
+
 string InputReader::GetImageName(int frameId) {
-	string full_path = dirnameOf(strMatchesPath) + "/" + img_names[frameId];
+	string full_path = imagesPath + "/" + img_names[frameId];
 	return full_path;
 }
 
@@ -199,7 +337,7 @@ vector<cv::KeyPoint> InputReader::GetUndistortedKPs(int frameId, cv::Mat mK) {
 
 	//Lee los coeficientes de distorsión de los archivos
 	cv::Mat DistCoef(4, 1, CV_32F);
-	cv::FileStorage fSettings(strSettingPath, cv::FileStorage::READ);
+	cv::FileStorage fSettings(calibPath, cv::FileStorage::READ);
 	DistCoef.at<float>(0) = fSettings["Camera.k1"];
 	DistCoef.at<float>(1) = fSettings["Camera.k2"];
 	DistCoef.at<float>(2) = fSettings["Camera.p1"];
@@ -242,41 +380,90 @@ vector<cv::KeyPoint> InputReader::GetUndistortedKPs(int frameId, cv::Mat mK) {
 	return mvKeysUn;
 }
 
-vector<int> InputReader::GetInitialMatches() {
-	int kf1, kf2, max = 0;
-	for (int i = 0; i < numFrames; i++) {
-		for (int j = 0; j < numFrames; j++) {
-			if (i == j)
-				continue;
-			vector<int> matches = GetMatches(i, j);
-			int num = 0;
-			for (int k = 0; k < matches.size(); k++) {
-				if (matches[k] != -1)
-					num++;
-			}
-			if (num > max) {
-				kf1 = i;
-				kf2 = j;
-				max = num;
-			}
-		}
-	}
-	frame0 = kf1;
-	frame1 = kf2;
-	return GetMatches(frame0, frame1);
-
+bool sortdesc(const tuple<int, int, int>& a,
+              const tuple<int, int, int>& b)
+{
+    return (get<0>(a) > get<0>(b));
 }
 
-vector<int> InputReader::GetNotInitialFrames() {
-	if (frame0 < 0 || frame1 < 0)
-		vector<int> m = GetInitialMatches();
+
+
+vector<tuple<int,int,int> > InputReader::GetInitialPairsFromMostMatches(float dist) {
+	vector<tuple<int,int,int> > pairs;
+
+	//int kf1, kf2, max = 0;
+	for (int i = 0; i < numFrames; i++) {
+		for (int j = 0; j < numFrames; j++) {
+			if (i >= j | abs(i-j) != dist)
+				continue;
+			map<int, Match> matches = GetMatches(i, j);
+			int num = matches.size();
+			if (num<7) continue;
+			//cout << num <<" "<<i<<" "<<j <<endl;
+			pairs.push_back(make_tuple(num,i,j));
+			}
+	}	
+	sort(pairs.begin(), pairs.end(), sortdesc);
+	return pairs;	
+}
+
+vector<tuple<int,int,int> > InputReader::GetInitialPairsFromLeastMatches() {
+	vector<tuple<int,int,int> > pairs;
+	float dist = 15;
+
+	//int kf1, kf2, max = 0;
+	for (int i = 0; i < numFrames; i++) {
+		for (int j = 0; j < numFrames; j++) {
+			if (i >= j | abs(i-j) < dist)
+				continue;
+			map<int, Match> matches = GetMatches(i, j);
+			int num = matches.size();
+			if (num<7) continue;
+			//cout << num <<" "<<i<<" "<<j <<endl;
+			pairs.push_back(make_tuple(num,i,j));
+			}
+	}	
+	sort(pairs.begin(), pairs.end());//, sortdesc);
+	return pairs;	
+}
+
+vector<tuple<int,int,int> > InputReader::GetInitialPairsFromQuartiles() {
+	vector<tuple<int,int,int> > pairs;
+	int q = numFrames/4;
+	int q1 = q;
+	int q3 = 3*q;
+	int index = 0; 
+
+	while(q1!=q3){
+		pairs.push_back(make_tuple(index,q1,q3));
+		index++; q1++; q3--;
+	}
+	return pairs;	
+}
+	
+
+vector<int> InputReader::GetNotInitialFrames(int n=0) {
+	//if (frame0 < 0 || frame1 < 0)
+	//	vector<int> m = GetInitialMatches();
 	vector<int> f;
 	for (int i = 0; i < numFrames; i++) {
 		if (i != frame0 && i != frame1)
 			f.push_back(i);
 	}
-	return f;
+	if(n>0){
+		vector<int> out;
+	    size_t nelems = n;
+
+		std::sample(f.begin(),f.end(),
+	        std::back_inserter(out), n,
+	        std::mt19937{std::random_device{}()});
+		return out;
+	}else{
+		return f;
+	}
 }
+
+
 
 vector<int> InputReader::GetIndexInKfs(vector<int> kfs, int track) {
 	vector<int> indexes;

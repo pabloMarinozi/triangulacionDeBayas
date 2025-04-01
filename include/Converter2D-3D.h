@@ -2,6 +2,7 @@
 #define CONVERTER2D-3D_H
 
 #include <KeyFrame.h>
+#include <Map.h>
 #include <opencv2/core/types.hpp>
 #include <utility>
 #include <vector>
@@ -15,7 +16,8 @@ public:
 	Converter();
 	cv::Mat TriangularMapPoint(pair<KeyFrame*, cv::Point2f> kp1,
 			pair<KeyFrame*, cv::Point2f> kp2);
-	vector<cv::Point2f> ReprojectAllMapPointsOnKeyFrame(KeyFrame* kf);
+	map<int, cv::Point2f> ReprojectVisibleMapPointsOnKeyFrame(KeyFrame* kf);
+  map<int, cv::Point2f> ReprojectAllMapPointsOnKeyFrame(KeyFrame* kf, ORB_SLAM2::Map* map);
 	cv::Point2f ReprojectMapPointOnKeyFrame(MapPoint* hp, KeyFrame* kf);
 	cv::Point2f ReproyectarPunto(cv::Mat R, cv::Mat t, cv::Mat K, cv::Mat p3d);
 

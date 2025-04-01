@@ -1,7 +1,7 @@
 src/Optimizer.o: ../src/Optimizer.cc \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Converter2D-3D.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/KeyFrame.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapPoint.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Converter2D-3D.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/KeyFrame.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapPoint.h \
  /usr/include/opencv4/opencv2/core/mat.hpp \
  /usr/include/opencv4/opencv2/core/matx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
@@ -20,7 +20,8 @@ src/Optimizer.o: ../src/Optimizer.cc \
  /usr/include/opencv4/opencv2/core/types.hpp \
  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Converter.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Map.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Converter.h \
  /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
@@ -192,36 +193,36 @@ src/Optimizer.o: ../src/Optimizer.cc \
  /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/./RealQZ.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_vertex.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/optimizable_graph.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/openmp_mutex.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/../../config.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/hyper_graph.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/parameter.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/parameter_container.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/jacobian_workspace.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_vertex.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/optimizable_graph.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/openmp_mutex.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/../../config.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/hyper_graph.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/parameter.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/parameter_container.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/jacobian_workspace.h \
  /usr/include/eigen3/Eigen/Core /usr/include/eigen3/Eigen/StdVector \
  /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h \
  /usr/include/eigen3/Eigen/src/StlSupport/details.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/../stuff/macros.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/creators.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/../stuff/macros.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/creators.h \
  /usr/include/eigen3/Eigen/Cholesky \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_vertex.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_binary_edge.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_edge.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/robust_kernel.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_binary_edge.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_unary_edge.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_unary_edge.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3_ops.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_vertex.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_binary_edge.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_edge.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/robust_kernel.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_binary_edge.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_unary_edge.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_unary_edge.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3_ops.h \
  /usr/include/eigen3/Eigen/Geometry \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3_ops.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3quat.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_sba.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_seven_dof_expmap.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/sim3.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3_ops.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3quat.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_sba.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_seven_dof_expmap.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/sim3.h \
  /usr/include/opencv4/opencv2/core/core.hpp \
  /usr/include/opencv4/opencv2/core.hpp \
  /usr/include/opencv4/opencv2/core/version.hpp \
@@ -232,43 +233,42 @@ src/Optimizer.o: ../src/Optimizer.cc \
  /usr/include/opencv4/opencv2/core/optim.hpp \
  /usr/include/opencv4/opencv2/core/ovx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Map.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Optimizer.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/sim3.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_optimizer.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/macros.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/optimizable_graph.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_block_matrix.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_block_matrix_ccs.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../../config.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/matrix_operations.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/matrix_structure.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_block_matrix.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/batch_stats.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/block_solver.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/solver.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/hyper_graph.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/linear_solver.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_block_matrix_diagonal.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/openmp_mutex.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/block_solver.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_optimizer.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Optimizer.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/sim3.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_optimizer.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/macros.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/optimizable_graph.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_block_matrix.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_block_matrix_ccs.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../../config.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/matrix_operations.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/matrix_structure.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_block_matrix.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/batch_stats.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/block_solver.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/solver.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/hyper_graph.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/linear_solver.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_block_matrix_diagonal.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/openmp_mutex.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/block_solver.hpp \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_optimizer.h \
  /usr/include/eigen3/Eigen/LU \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/timeutil.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/misc.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/macros.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/base_edge.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/base_vertex.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/hyper_graph.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/optimizable_graph.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/optimization_algorithm_levenberg.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/optimization_algorithm_with_hessian.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/optimization_algorithm.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/property.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/string_tools.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/robust_kernel_impl.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/robust_kernel.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/solvers/linear_solver_eigen.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/timeutil.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/misc.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/macros.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/base_edge.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/base_vertex.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/hyper_graph.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/optimizable_graph.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/optimization_algorithm_levenberg.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/optimization_algorithm_with_hessian.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/optimization_algorithm.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/property.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/string_tools.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/robust_kernel_impl.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/robust_kernel.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/solvers/linear_solver_eigen.h \
  /usr/include/eigen3/Eigen/Sparse /usr/include/eigen3/Eigen/SparseCore \
  /usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h \
  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
@@ -344,20 +344,20 @@ src/Optimizer.o: ../src/Optimizer.cc \
  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
  /usr/include/eigen3/Eigen/SparseCholesky \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/solvers/../core/linear_solver.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/solvers/../core/batch_stats.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/solvers/../stuff/timeutil.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/solvers/../core/eigen_types.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3quat.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_sba.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_seven_dof_expmap.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/solvers/../core/linear_solver.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/solvers/../core/batch_stats.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/solvers/../stuff/timeutil.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/solvers/../core/eigen_types.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3quat.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_sba.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_seven_dof_expmap.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Converter2D-3D.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Converter2D-3D.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/KeyFrame.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/KeyFrame.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapPoint.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapPoint.h:
 
 /usr/include/opencv4/opencv2/core/mat.hpp:
 
@@ -395,7 +395,9 @@ src/Optimizer.o: ../src/Optimizer.cc \
 
 /usr/include/opencv4/opencv2/core/mat.inl.hpp:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Converter.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Map.h:
+
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Converter.h:
 
 /usr/include/eigen3/Eigen/Dense:
 
@@ -747,23 +749,23 @@ src/Optimizer.o: ../src/Optimizer.cc \
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_vertex.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_vertex.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/optimizable_graph.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/optimizable_graph.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/openmp_mutex.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/openmp_mutex.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/../../config.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/../../config.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/hyper_graph.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/hyper_graph.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/parameter.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/parameter.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/parameter_container.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/parameter_container.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/jacobian_workspace.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/jacobian_workspace.h:
 
 /usr/include/eigen3/Eigen/Core:
 
@@ -773,41 +775,41 @@ src/Optimizer.o: ../src/Optimizer.cc \
 
 /usr/include/eigen3/Eigen/src/StlSupport/details.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/../stuff/macros.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/../stuff/macros.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/creators.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/creators.h:
 
 /usr/include/eigen3/Eigen/Cholesky:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_vertex.hpp:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_vertex.hpp:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_binary_edge.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_binary_edge.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_edge.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_edge.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/robust_kernel.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/robust_kernel.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_binary_edge.hpp:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_binary_edge.hpp:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_unary_edge.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_unary_edge.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/../core/base_unary_edge.hpp:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/../core/base_unary_edge.hpp:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3_ops.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3_ops.h:
 
 /usr/include/eigen3/Eigen/Geometry:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3_ops.hpp:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3_ops.hpp:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3quat.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3quat.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_sba.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_sba.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_seven_dof_expmap.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_seven_dof_expmap.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/sim3.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/sim3.h:
 
 /usr/include/opencv4/opencv2/core/core.hpp:
 
@@ -829,79 +831,77 @@ src/Optimizer.o: ../src/Optimizer.cc \
 
 /usr/include/opencv4/opencv2/core/cvdef.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Map.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Optimizer.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Optimizer.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/sim3.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/sim3.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_optimizer.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_optimizer.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/macros.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/macros.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/optimizable_graph.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/optimizable_graph.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_block_matrix.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_block_matrix.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_block_matrix_ccs.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_block_matrix_ccs.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../../config.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../../config.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/matrix_operations.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/matrix_operations.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/matrix_structure.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/matrix_structure.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_block_matrix.hpp:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_block_matrix.hpp:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/batch_stats.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/batch_stats.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/block_solver.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/block_solver.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/solver.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/solver.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/hyper_graph.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/hyper_graph.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/linear_solver.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/linear_solver.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_block_matrix_diagonal.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_block_matrix_diagonal.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/openmp_mutex.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/openmp_mutex.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/block_solver.hpp:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/block_solver.hpp:
-
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/sparse_optimizer.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/sparse_optimizer.h:
 
 /usr/include/eigen3/Eigen/LU:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/timeutil.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/timeutil.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/misc.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/misc.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/macros.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/macros.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/base_edge.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/base_edge.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/base_vertex.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/base_vertex.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/hyper_graph.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/hyper_graph.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/optimizable_graph.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/optimizable_graph.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/optimization_algorithm_levenberg.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/optimization_algorithm_levenberg.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/optimization_algorithm_with_hessian.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/optimization_algorithm_with_hessian.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/optimization_algorithm.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/optimization_algorithm.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/property.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/property.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/../stuff/string_tools.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/../stuff/string_tools.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/robust_kernel_impl.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/robust_kernel_impl.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/core/robust_kernel.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/core/robust_kernel.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/solvers/linear_solver_eigen.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/solvers/linear_solver_eigen.h:
 
 /usr/include/eigen3/Eigen/Sparse:
 
@@ -1055,18 +1055,18 @@ src/Optimizer.o: ../src/Optimizer.cc \
 
 /usr/include/eigen3/Eigen/SparseCholesky:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/solvers/../core/linear_solver.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/solvers/../core/linear_solver.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/solvers/../core/batch_stats.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/solvers/../core/batch_stats.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/solvers/../stuff/timeutil.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/solvers/../stuff/timeutil.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/solvers/../core/eigen_types.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/solvers/../core/eigen_types.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/se3quat.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/se3quat.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_sba.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_sba.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_seven_dof_expmap.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_seven_dof_expmap.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Thirdparty/g2o/g2o/types/types_six_dof_expmap.h:

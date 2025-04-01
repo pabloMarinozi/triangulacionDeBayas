@@ -19,6 +19,7 @@
 */
 
 #include <Initializer.h>
+#include <colormod.h>
 #include <opencv2/core/cvdef.h>
 #include <opencv2/core/hal/interface.h>
 #include <opencv2/core/mat.hpp>
@@ -35,6 +36,8 @@
 #include <utility>
 #include <vector>
 #include<iostream>
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -51,7 +54,7 @@ Initializer::Initializer(cv::Mat K, std::vector<cv::KeyPoint> kps1,std::vector<c
     mMaxIterations = iterations;
 }
 
-bool Initializer::Initialize(const vector<int> &vMatches12, cv::Mat &R21, cv::Mat &t21,
+bool Initializer::Initialize(const map<int, Match> &vMatches12, cv::Mat &R21, cv::Mat &t21,
                              vector<cv::Point3f> &vP3D, vector<bool> &vbTriangulated)
 {
     // Fill structures with current keypoints and matches with reference frame
@@ -60,7 +63,15 @@ bool Initializer::Initialize(const vector<int> &vMatches12, cv::Mat &R21, cv::Ma
     mvMatches12.clear();
     mvMatches12.reserve(mvKeys2.size());
     mvbMatched1.resize(mvKeys1.size());
-    for(size_t i=0, iend=vMatches12.size();i<iend; i++)
+    std::fill(mvbMatched1.begin(), mvbMatched1.end(), false);
+    for (auto const& x : vMatches12){
+        int trackId = x.first;
+        Match match = x.second;
+        mvTrackId.push_back(trackId);
+        mvMatches12.push_back(match);
+        mvbMatched1[match.first]=true;
+    }
+    /*for(size_t i=0, iend=vMatches12.size();i<iend; i++)
     {
         if(vMatches12[i]>=0)
         {
@@ -69,9 +80,10 @@ bool Initializer::Initialize(const vector<int> &vMatches12, cv::Mat &R21, cv::Ma
         }
         else
             mvbMatched1[i]=false;
-    }
+    }*/
 
     const int N = mvMatches12.size();
+
 
     // Indices for minimum set selection
     vector<size_t> vAllIndices;
@@ -85,6 +97,7 @@ bool Initializer::Initialize(const vector<int> &vMatches12, cv::Mat &R21, cv::Ma
 
     // Generate sets of 8 points for each RANSAC iteration
     mvSets = vector< vector<size_t> >(mMaxIterations,vector<size_t>(8,0));
+    mvSetsTracks = vector< vector<size_t> >(mMaxIterations,vector<size_t>(8,0));
 
     bool initialized = false;
     int seed = 1;
@@ -100,15 +113,18 @@ bool Initializer::Initialize(const vector<int> &vMatches12, cv::Mat &R21, cv::Ma
 			// Select a minimum set
 			for(size_t j=0; j<8; j++)
 			{
-				int randi = rand() % vAvailableIndices.size();
+				if(vAvailableIndices.size()==0) break;
+                int randi = rand() % vAvailableIndices.size();
 				int idx = vAvailableIndices[randi];
 
 				mvSets[it][j] = idx;
+                mvSetsTracks[it][j] = mvTrackId[idx];
 
 				vAvailableIndices[randi] = vAvailableIndices.back();
 				vAvailableIndices.pop_back();
 			}
 		}
+
 
 		// Launch threads to compute in parallel a fundamental matrix and a homography
 		vector<bool> vbMatchesInliersH, vbMatchesInliersF;
@@ -118,32 +134,122 @@ bool Initializer::Initialize(const vector<int> &vMatches12, cv::Mat &R21, cv::Ma
 		thread threadH(&Initializer::FindHomography,this,ref(vbMatchesInliersH), ref(SH), ref(H));
 		thread threadF(&Initializer::FindFundamental,this,ref(vbMatchesInliersF), ref(SF), ref(F));
 
+
 		// Wait until both threads have finished
 		threadH.join();
 		threadF.join();
-
 		// Compute ratio of scores
 		float RH = SH/(SH+SF);
+        //cout<<RH<<endl;
 
 
 
 		// Try to reconstruct from homography or fundamental depending on the ratio (0.40-0.45)
-		if(RH>0.40)
-			initialized = ReconstructH(vbMatchesInliersH,H,mK,R21,t21,vP3D,vbTriangulated,1.0,5);
-		else //if(pF_HF>0.6)
+		// if(RH>0.40){
+		// 	initialized = ReconstructH(vbMatchesInliersH,H,mK,R21,t21,vP3D,vbTriangulated,1.0,5);
+  //       }
+		// else{ //if(pF_HF>0.6)
 			initialized = ReconstructF(vbMatchesInliersF,F,mK,R21,t21,vP3D,vbTriangulated,1.0,5);
+        //}
+        Color::Modifier red(Color::FG_RED);
+        Color::Modifier green(Color::FG_GREEN);
+        Color::Modifier def(Color::FG_DEFAULT); 
 
 		if(!initialized){
 
-			cout << "FALLÓ LA INICIALIZACIÓN CON LA SEMILLA "<<seed<<endl;
+			cout<<endl<<red << "FALLÓ LA INICIALIZACIÓN CON LA SEMILLA "<<seed<<def<<endl;
 			seed++;
-		}
+		} else cout<<endl<<green<<"INICIALIZACIÓN EXITOSA CON LA SEMILLA "<<seed<<def<<endl;
 
-	} while (!initialized);
-	cout<<"INICIALIZACIÓN EXITOSA CON LA SEMILLA "<<seed<<endl;
+	} while (!initialized & seed<3);
 
     return initialized;
 }
+
+pair<float, vector<bool> > Initializer::GetRansacInliers(const map<int, Match> &vMatches12)
+{
+    // Fill structures with current keypoints and matches with reference frame
+    // Reference Frame: 1, Current Frame: 2
+
+    mvMatches12.clear();
+    mvMatches12.reserve(mvKeys2.size());
+    mvbMatched1.resize(mvKeys1.size());
+    std::fill(mvbMatched1.begin(), mvbMatched1.end(), false);
+    for (auto const& x : vMatches12){
+        int trackId = x.first;
+        Match match = x.second;
+        mvTrackId.push_back(trackId);
+        mvMatches12.push_back(match);
+        mvbMatched1[match.first]=true;
+    }
+    /*for(size_t i=0, iend=vMatches12.size();i<iend; i++)
+    {
+        if(vMatches12[i]>=0)
+        {
+            mvMatches12.push_back(make_pair((int)i,vMatches12[i]));
+            mvbMatched1[i]=true;
+        }
+        else
+            mvbMatched1[i]=false;
+    }*/
+
+    const int N = mvMatches12.size();
+
+    // Indices for minimum set selection
+    vector<size_t> vAllIndices;
+    vAllIndices.reserve(N);
+    vector<size_t> vAvailableIndices;
+
+    for(int i=0; i<N; i++)
+    {
+        vAllIndices.push_back(i);
+    }
+
+    // Generate sets of 8 points for each RANSAC iteration
+    mvSets = vector< vector<size_t> >(mMaxIterations,vector<size_t>(8,0));
+    mvSetsTracks = vector< vector<size_t> >(mMaxIterations,vector<size_t>(8,0));
+
+    bool initialized = false;
+    int seed = 1;
+
+
+    srand(seed);
+
+    for(int it=0; it<mMaxIterations; it++)
+    {
+        vAvailableIndices = vAllIndices;
+
+            // Select a minimum set
+        for(size_t j=0; j<8; j++)
+        {
+            if(vAvailableIndices.size()==0) break;
+            int randi = rand() % vAvailableIndices.size();
+            int idx = vAvailableIndices[randi];
+
+            mvSets[it][j] = idx;
+            mvSetsTracks[it][j] = mvTrackId[idx];
+
+            vAvailableIndices[randi] = vAvailableIndices.back();
+            vAvailableIndices.pop_back();
+        }
+    }
+
+        // Launch threads to compute in parallel a fundamental matrix and a homography
+    vector<bool> vbMatchesInliersH, vbMatchesInliersF;
+    float SH, SF;
+    cv::Mat H, F;
+
+    thread threadH(&Initializer::FindHomography,this,ref(vbMatchesInliersH), ref(SH), ref(H));
+    thread threadF(&Initializer::FindFundamental,this,ref(vbMatchesInliersF), ref(SF), ref(F));
+
+        // Wait until both threads have finished
+    threadH.join();
+    threadF.join();
+
+    return make_pair(SF,vbMatchesInliersF);
+}
+
+
 
 
 void Initializer::FindHomography(vector<bool> &vbMatchesInliers, float &score, cv::Mat &H21)
@@ -170,12 +276,19 @@ void Initializer::FindHomography(vector<bool> &vbMatchesInliers, float &score, c
     float currentScore;
 
     // Perform all RANSAC iterations and save the solution with highest score
+    //ofstream myfile;
+    //myfile.open("Inicializaciones.csv");
     for(int it=0; it<mMaxIterations; it++)
     {
         // Select a minimum set
         for(size_t j=0; j<8; j++)
         {
             int idx = mvSets[it][j];
+            // if (myfile.is_open()) {
+            //     myfile << mvSetsTracks[it][j];
+            // }
+            
+
 
             vPn1i[j] = vPn1[mvMatches12[idx].first];
             vPn2i[j] = vPn2[mvMatches12[idx].second];
@@ -186,6 +299,7 @@ void Initializer::FindHomography(vector<bool> &vbMatchesInliers, float &score, c
         H12i = H21i.inv();
 
         currentScore = CheckHomography(H21i, H12i, vbCurrentInliers, mSigma);
+        //if (myfile.is_open()) { myfile << currentScore<<endl;}
 
         if(currentScore>score)
         {
@@ -194,6 +308,7 @@ void Initializer::FindHomography(vector<bool> &vbMatchesInliers, float &score, c
             score = currentScore;
         }
     }
+    //myfile.close();
 }
 
 
@@ -227,6 +342,7 @@ void Initializer::FindFundamental(vector<bool> &vbMatchesInliers, float &score, 
         for(int j=0; j<8; j++)
         {
             int idx = mvSets[it][j];
+
 
             vPn1i[j] = vPn1[mvMatches12[idx].first];
             vPn2i[j] = vPn2[mvMatches12[idx].second];
@@ -354,8 +470,9 @@ float Initializer::CheckHomography(const cv::Mat &H21, const cv::Mat &H12, vecto
     vbMatchesInliers.resize(N);
 
     float score = 0;
+    //const float th = 10.0; //versión modificada
 
-    const float th = 5.991;
+    const float th = 5.991; //versión original
 
     const float invSigmaSquare = 1.0/(sigma*sigma);
 
@@ -430,8 +547,8 @@ float Initializer::CheckFundamental(const cv::Mat &F21, vector<bool> &vbMatchesI
 
     float score = 0;
 
-    const float th = 3.841;
-    const float thScore = 5.991;
+    const float th = 3.841*40;
+    const float thScore = 5.991*40;
 
     const float invSigmaSquare = 1.0/(sigma*sigma);
 

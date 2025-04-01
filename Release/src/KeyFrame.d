@@ -1,6 +1,6 @@
 src/KeyFrame.o: ../src/KeyFrame.cc \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/KeyFrame.h \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapPoint.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/KeyFrame.h \
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapPoint.h \
  /usr/include/opencv4/opencv2/core/mat.hpp \
  /usr/include/opencv4/opencv2/core/matx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
@@ -19,11 +19,11 @@ src/KeyFrame.o: ../src/KeyFrame.cc \
  /usr/include/opencv4/opencv2/core/types.hpp \
  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
- /home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Map.h
+ /home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Map.h
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/KeyFrame.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/KeyFrame.h:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/MapPoint.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/MapPoint.h:
 
 /usr/include/opencv4/opencv2/core/mat.hpp:
 
@@ -61,4 +61,4 @@ src/KeyFrame.o: ../src/KeyFrame.cc \
 
 /usr/include/opencv4/opencv2/core/mat.inl.hpp:
 
-/home/pablo/eclipse-workspace/TrianguladoCentroBayas/include/Map.h:
+/home/pablo/DHARMA/identificaci-nDeRacimos/Triangulacion/include/Map.h:
